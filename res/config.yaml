@@ -1,0 +1,21 @@
+version: 1.0
+
+# 数据目录
+data_dir: ${base}/data
+
+# git配置
+git_auth:
+  gitee:
+    remote: https://gitee.com/${username}/${project}.git
+    username: username
+    type: password
+    password: password
+    cert: ${base}/.ssh/id_rsa.pub
+  github:
+    remote: https://github.com/${username}/${project}.git
+    username: username
+    type: password
+    passwdord: password
+    cert: ${base}/.ssh/id_rsa.pub
+
+
