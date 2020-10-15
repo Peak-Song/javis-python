@@ -15,7 +15,7 @@ git_auth:
     remote: https://github.com/${username}/${project}.git
     username: username
     type: password
-    passwdord: password
+    password: password
     cert: ${base}/.ssh/id_rsa.pub
 
 
