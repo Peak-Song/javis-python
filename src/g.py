@@ -9,7 +9,7 @@ from pathlib import Path
 my_os = platform.system()
 
 
-class ProGlobal:
+class ProContext:
     # 设置程序全局变量
     # program_base: 项目的基目录
     # user_home: 用户主目录
@@ -25,8 +25,9 @@ class ProGlobal:
 
         self.log_base = self.program_base + '/logs'
 
-        self.git_ready = False
+        self.git_native_ready = False
+        self.git_remote_config = False
         self.data_dir = None
 
 
-pro_env = ProGlobal()
+pro_env = ProContext()

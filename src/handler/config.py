@@ -15,7 +15,6 @@ except ImportError:
 
 class BaseConfig:
     def __init__(self):
-        self.git_ready = False
         self.data_dir = path.join(pro_env.program_base, 'data')
 
 
@@ -32,26 +31,14 @@ class ConfigHandler:
                 dump(base_cfg.__dict__, cfg_file, Dumper=Dumper)
 
             pro_env.data_dir = base_cfg.data_dir
-            pro_env.git_ready = False
         else:
             # 读取
             cfg = load(open(cfg_path, 'r', encoding='utf-8'), Loader=Loader)
-            if 'git_ready' not in cfg:
-                raise ValueError('git_ready not in config file')
 
             if 'data_dir' not in cfg:
                 raise ValueError('data_dir not in config file')   # todo
 
-            pro_env.git_ready = cfg['git_ready']
             pro_env.data_dir = cfg['data_dir']
-
-    @classmethod
-    def do(cls):
-        pass
-
-    @classmethod
-    def go(cls):
-        pass
 
 
 if __name__ == '__main__':
